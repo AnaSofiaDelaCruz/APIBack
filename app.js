@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+const cors = require("cors");
+
+
 app.use(bodyParser.json());
 
 
@@ -20,11 +23,11 @@ app.use(bodyParser.json());
 //     database: 'AlumnosUP'
 // });
 
-const cors = require("cors");
 
-router.use(cors())
 
-router.use((req, res, next) => {
+app.use(cors())
+
+app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
       "Access-Control-Allow-Headers",

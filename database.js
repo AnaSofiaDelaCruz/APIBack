@@ -1,6 +1,6 @@
 //MYSQL
 
-const mysql = require ('mysql');
+const mysql = require ('mysql2');
 const PORT = process.env.PORT || 3000;
 
 const connection = mysql.createConnection({
