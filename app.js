@@ -1,6 +1,8 @@
 const express = require('express');
 const mysql = require ('mysql');
 
+const connection = require("./database");
+
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
@@ -10,13 +12,13 @@ const app = express();
 app.use(bodyParser.json());
 
 
-//MYSQL
-const connection = mysql.createConnection({
-    host: 'ec2-54-234-184-170.compute-1.amazonaws.com',
-    user: 'ana',
-    password: '183389',
-    database: 'AlumnosUP'
-});
+// //MYSQL
+// const connection = mysql.createConnection({
+//     host: 'ec2-34-238-154-40.compute-1.amazonaws.com',
+//     user: 'ana',
+//     password: '183389',
+//     database: 'AlumnosUP'
+// });
 
 //Route
 app.get('/',(req,res)=> { 
