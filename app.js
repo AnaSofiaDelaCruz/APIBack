@@ -20,6 +20,22 @@ app.use(bodyParser.json());
 //     database: 'AlumnosUP'
 // });
 
+const cors = require("cors");
+
+router.use(cors())
+
+router.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method"
+    );
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+    res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
+    next();
+  });
+
+
 //Route
 app.get('/',(req,res)=> { 
     res.send('Funciona');
